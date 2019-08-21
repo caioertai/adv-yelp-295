@@ -1,0 +1,20 @@
+<!-- !!! WRONG !!! -->
+<!-- <form action="/reviews" method="post"></form> -->
+<%#= form_for @review do |f| %><%# end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h3>New <%= @restaurant.name %> review</h3>
+
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<!-- <form action="/restaurants/6/reviews" method="post"></form>
+ -->

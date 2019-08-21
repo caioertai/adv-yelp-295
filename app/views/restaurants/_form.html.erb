@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <%= simple_form_for restaurant do |form| %>
+        <% if restaurant.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+            <ul>
+            <% restaurant.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= form.input :name %>
+        <%= form.input :address %>
+        <%= form.input :description %>
+        <%= form.input :stars %>
+        <%= form.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
